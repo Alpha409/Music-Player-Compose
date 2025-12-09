@@ -2,10 +2,9 @@ package com.example.musicplayercompose.common.utils
 
 import android.content.Context
 import android.net.Uri
+import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
-import com.example.musicplayer.domain.models.Mp3FilesDataClass
-import com.google.android.exoplayer2.ExoPlayer
-import com.google.android.exoplayer2.MediaItem
+import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 
 object Utils {
     private var exoPlayer: ExoPlayer? = null

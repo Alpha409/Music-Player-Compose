@@ -1,6 +1,6 @@
-package com.example.musicplayer.domain.repository
+package com.example.musicplayercompose.domain.repository
 
-import com.example.musicplayer.domain.models.Mp3FilesDataClass
+import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 import kotlinx.coroutines.flow.Flow
 
 interface FavSongsRepo {

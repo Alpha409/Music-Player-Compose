@@ -1,8 +1,8 @@
-package com.example.musicplayer.data.repoimpl
+package com.example.musicplayercompose.data.repoimpl
 
-import com.example.musicplayer.data.datasource.LocalDataSource
-import com.example.musicplayer.domain.models.Mp3FilesDataClass
-import com.example.musicplayer.domain.repository.GetMusicLocalRepo
+import com.example.musicplayercompose.data.datasource.LocalDataSource
+import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
+import com.example.musicplayercompose.domain.repository.GetMusicLocalRepo
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

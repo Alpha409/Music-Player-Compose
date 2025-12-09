@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.musicplayer.domain.models.Mp3FilesDataClass
+import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 import kotlinx.coroutines.flow.Flow
 
 

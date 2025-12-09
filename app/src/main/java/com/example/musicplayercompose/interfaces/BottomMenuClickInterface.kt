@@ -1,6 +1,6 @@
-package com.example.musicplayer.interfaces
+package com.example.musicplayercompose.interfaces
 
-import com.example.musicplayer.domain.models.Mp3FilesDataClass
+import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 
 interface BottomMenuClickInterface {
     fun showBottomMenu(Mp3Songs: Mp3FilesDataClass)

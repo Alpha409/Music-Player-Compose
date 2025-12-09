@@ -1,10 +1,10 @@
-package com.example.musicplayer.viewModel
+package com.example.musicplayercompose.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.musicplayer.domain.models.Mp3FilesDataClass
-import com.example.musicplayer.domain.repository.FavSongsRepo
-import com.example.musicplayer.domain.repository.GetMusicLocalRepo
+import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
+import com.example.musicplayercompose.domain.repository.FavSongsRepo
+import com.example.musicplayercompose.domain.repository.GetMusicLocalRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,8 +1,8 @@
-package com.example.musicplayer.data.repoimpl
+package com.example.musicplayercompose.data.repoimpl
 
-import com.example.musicplayer.data.datasource.FavSongsDataSource
-import com.example.musicplayer.domain.models.Mp3FilesDataClass
-import com.example.musicplayer.domain.repository.FavSongsRepo
+import com.example.musicplayercompose.data.datasource.FavSongsDataSource
+import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
+import com.example.musicplayercompose.domain.repository.FavSongsRepo
 import kotlinx.coroutines.flow.Flow
 
 class FavSongsRepoImpl(val favSource: FavSongsDataSource) : FavSongsRepo {

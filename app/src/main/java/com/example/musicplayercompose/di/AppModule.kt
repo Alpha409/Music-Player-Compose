@@ -1,12 +1,12 @@
-package com.example.musicplayer.di
+package com.example.musicplayercompose.di
 
 import android.content.Context
-import com.example.musicplayer.data.datasource.FavSongsDataSource
-import com.example.musicplayer.data.datasource.LocalDataSource
-import com.example.musicplayer.data.repoimpl.FavSongsRepoImpl
-import com.example.musicplayer.data.repoimpl.GetMusicLocalRepoImpl
-import com.example.musicplayer.domain.repository.FavSongsRepo
-import com.example.musicplayer.domain.repository.GetMusicLocalRepo
+import com.example.musicplayercompose.data.datasource.FavSongsDataSource
+import com.example.musicplayercompose.data.datasource.LocalDataSource
+import com.example.musicplayercompose.data.repoimpl.FavSongsRepoImpl
+import com.example.musicplayercompose.data.repoimpl.GetMusicLocalRepoImpl
+import com.example.musicplayercompose.domain.repository.FavSongsRepo
+import com.example.musicplayercompose.domain.repository.GetMusicLocalRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.example.musicplayer.di
+package com.example.musicplayercompose.di
 
 import android.content.Context
 import androidx.room.Room

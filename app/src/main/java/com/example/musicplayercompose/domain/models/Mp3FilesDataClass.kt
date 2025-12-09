@@ -1,6 +1,5 @@
-package com.example.musicplayer.domain.models
+package com.example.musicplayercompose.domain.models
 
-import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
