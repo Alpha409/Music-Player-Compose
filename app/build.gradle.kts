@@ -38,11 +38,19 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
     buildFeatures {
         compose = true
     }
+    allprojects {
+        configurations.all {
+            resolutionStrategy {
+                force("com.squareup:javapoet:1.13.0")
+            }
+        }
+    }
+
 }
 
 dependencies {
@@ -57,6 +65,8 @@ dependencies {
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.media3.exoplayer)
     implementation(libs.androidx.room.ktx)
+    ksp (libs.androidx.room.compiler)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +76,6 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.javapoet)
 }

@@ -2,7 +2,7 @@ package com.example.musicplayercompose.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.musicplayer.data.datasource.db.FavDatabase
+import com.example.musicplayercompose.data.datasource.db.FavDatabase
 import com.example.musicplayer.data.datasource.db.FavSongsDao
 import dagger.Module
 import dagger.Provides
