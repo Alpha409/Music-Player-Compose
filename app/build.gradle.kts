@@ -3,8 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 //    alias (libs.plugins.ksp)
-    alias(libs.plugins.hilt)
-    id("org.jetbrains.kotlin.kapt")   // <-- add this
+//    alias(libs.plugins.hilt)
+//    id("org.jetbrains.kotlin.kapt")   // <-- add this
 }
 
 android {
@@ -70,8 +70,8 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+//    implementation(libs.hilt.android)
+//    kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.navigation.compose)
 //    implementation(libs.javapoet)
 }

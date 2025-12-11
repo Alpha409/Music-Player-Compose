@@ -5,17 +5,15 @@ import androidx.lifecycle.viewModelScope
 import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 import com.example.musicplayercompose.domain.repository.FavSongsRepo
 import com.example.musicplayercompose.domain.repository.GetMusicLocalRepo
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 
-@HiltViewModel
-class MainViewModel @Inject constructor(
+/*@HiltViewModel*/
+class MainViewModel /*@Inject constructor*/(
     var localRepo: GetMusicLocalRepo, var favRepo: FavSongsRepo
 ) : ViewModel() {
     private val _favList = MutableStateFlow<List<Mp3FilesDataClass>>(emptyList())

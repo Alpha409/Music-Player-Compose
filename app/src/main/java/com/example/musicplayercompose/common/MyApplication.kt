@@ -1,10 +1,9 @@
 package com.example.musicplayercompose.common
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
 
 
-@HiltAndroidApp
+/*@HiltAndroidApp*/
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
