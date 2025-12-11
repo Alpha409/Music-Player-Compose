@@ -2,10 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias (libs.plugins.ksp)
+//    alias (libs.plugins.ksp)
     alias(libs.plugins.hilt)
-//    id("com.google.devtools.ksp") version "1.9.22-1.0.16"
-//    id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.kapt")   // <-- add this
 }
 
 android {
@@ -34,22 +33,21 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
+    configurations.all {
+        resolutionStrategy.force("com.squareup:javapoet:1.13.0")
+    }
+
     buildFeatures {
         compose = true
     }
-    allprojects {
-        configurations.all {
-            resolutionStrategy {
-                force("com.squareup:javapoet:1.13.0")
-            }
-        }
-    }
+
 
 }
 
@@ -65,7 +63,7 @@ dependencies {
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.media3.exoplayer)
     implementation(libs.androidx.room.ktx)
-    ksp (libs.androidx.room.compiler)
+    kapt (libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -75,7 +73,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
+    kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.javapoet)
 }
