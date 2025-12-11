@@ -40,9 +40,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    configurations.all {
-        resolutionStrategy.force("com.squareup:javapoet:1.13.0")
-    }
+
 
     buildFeatures {
         compose = true
@@ -62,8 +60,8 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.media3.exoplayer)
-    implementation(libs.androidx.room.ktx)
-    kapt (libs.androidx.room.compiler)
+//    implementation(libs.androidx.room.ktx)
+//    kapt(libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -75,5 +73,5 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.javapoet)
+//    implementation(libs.javapoet)
 }

@@ -1,5 +1,6 @@
-package com.example.musicplayer.data.datasource.db
+package com.example.musicplayercompose.data.datasource.db
 
+/*
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -22,4 +23,4 @@ interface FavSongsDao {
     suspend fun removeFav(favSong: Mp3FilesDataClass)
 
 
-}
+}*/

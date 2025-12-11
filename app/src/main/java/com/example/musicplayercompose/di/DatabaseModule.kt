@@ -1,5 +1,6 @@
 package com.example.musicplayercompose.di
 
+/*
 import android.content.Context
 import androidx.room.Room
 import com.example.musicplayercompose.data.datasource.db.FavDatabase
@@ -26,4 +27,4 @@ class DatabaseModule {
 
     @Provides
     fun provideFavDao(favDb: FavDatabase): FavSongsDao = favDb.favDao()
-}
+}*/

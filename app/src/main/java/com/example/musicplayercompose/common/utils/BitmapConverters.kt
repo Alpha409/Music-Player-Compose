@@ -1,5 +1,6 @@
 package com.example.musicplayercompose.common.utils
 
+/*
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.room.TypeConverter
@@ -20,4 +21,4 @@ class BitmapConverters {
             BitmapFactory.decodeByteArray(it, 0, it.size)
         }
     }
-}
+}*/
