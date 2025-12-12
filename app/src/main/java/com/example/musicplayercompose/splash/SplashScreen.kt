@@ -15,7 +15,7 @@ fun SplashScreen (navController: NavController) {
     Button(onClick = {
         navController.navigate("profile")
     }) {
-        Text("Go to Profile")
+        Text("Precision Granted")
     }
 }
 
