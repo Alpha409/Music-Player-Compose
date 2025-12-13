@@ -73,8 +73,7 @@ dependencies {
 //    implementation(libs.hilt.android)
 //    kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.lottie)
-
+    implementation("com.airbnb.android:lottie-compose:4.0.0")
     implementation (libs.sdp.compose)
 
 //    implementation(libs.javapoet)
