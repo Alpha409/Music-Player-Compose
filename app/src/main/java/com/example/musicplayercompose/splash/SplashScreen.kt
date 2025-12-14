@@ -5,11 +5,14 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -30,8 +33,6 @@ import ir.kaaveh.sdpcompose.ssp
 
 @Composable
 fun SplashScreen(navController: NavController) {
-
-
     Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Top) {
         Icon(
             painter = painterResource(R.drawable.musicicon),
@@ -45,7 +46,7 @@ fun SplashScreen(navController: NavController) {
                 .fillMaxWidth()
                 .padding(top = 22.sdp)
         )
-        AnimatedPreloader(modifier = Modifier.fillMaxWidth())
+        AnimatedPreloader(modifier = Modifier.height(100.dp).width(98.dp))
 
         Text(
             text = "Music Player",
@@ -54,8 +55,6 @@ fun SplashScreen(navController: NavController) {
             fontSize = 16.ssp
         )
     }
-
-
 }
 
 @Composable
@@ -76,7 +75,8 @@ fun AnimatedPreloader(modifier: Modifier = Modifier) {
     LottieAnimation(
         composition = preloaderLottieComposition,
         progress = preloaderProgress,
-        modifier = modifier
+        modifier = modifier,
+        alignment = Alignment.Center
     )
 
 
