@@ -1,6 +1,7 @@
 package com.example.musicplayercompose.splash
 
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -33,20 +35,33 @@ import ir.kaaveh.sdpcompose.ssp
 
 @Composable
 fun SplashScreen(navController: NavController) {
-    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Top) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(R.color.black)),
+        verticalArrangement = Arrangement.Top
+    ) {
         Icon(
             painter = painterResource(R.drawable.musicicon),
-            contentDescription = null, modifier = Modifier
+            contentDescription = null,
+            modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 22.sdp)
+                .padding(top = 22.sdp),
+            tint = Color.Unspecified
         )
         Icon(
             painter = painterResource(R.drawable.echo),
-            contentDescription = null, modifier = Modifier
+            contentDescription = null,
+            modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 22.sdp)
+                .padding(top = 22.sdp),
+            tint = Color.Unspecified
         )
-        AnimatedPreloader(modifier = Modifier.height(100.dp).width(98.dp))
+        AnimatedPreloader(
+            modifier = Modifier
+                .height(100.dp)
+                .fillMaxWidth()
+        )
 
         Text(
             text = "Music Player",
@@ -66,9 +81,7 @@ fun AnimatedPreloader(modifier: Modifier = Modifier) {
     )
 
     val preloaderProgress by animateLottieCompositionAsState(
-        preloaderLottieComposition,
-        iterations = LottieConstants.IterateForever,
-        isPlaying = true
+        preloaderLottieComposition, iterations = LottieConstants.IterateForever, isPlaying = true
     )
 
 
