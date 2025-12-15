@@ -1,13 +1,15 @@
 package com.example.musicplayercompose.common.bottomnav
 
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.musicplayercompose.R
+
 
 sealed class BottomNavItem(
     val route: String,
-    val icon: ImageVector,
+    val icon: Int,
     val label: String
 ) {
-    object Home : BottomNavItem("home", Icons.Default.Home, "Home")
-    object Search : BottomNavItem("search", Icons.Default.Search, "Search")
-    object Profile : BottomNavItem("profile", Icons.Default.Person, "Profile")
+    object Home : BottomNavItem("home", R.drawable.home, "Home")
+    object MyMusic : BottomNavItem("myMusic", R.drawable.music, "MyMusic")
+    object Favorite : BottomNavItem("fav", R.drawable.fav, "Favorite")
 }
