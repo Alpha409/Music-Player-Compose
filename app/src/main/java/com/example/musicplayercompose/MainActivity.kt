@@ -35,6 +35,7 @@ class MainActivity : ComponentActivity() {
                 }
                 composable("myMusic") { MusicScreen(navController) }
                 composable("fav") { FavoriteScreen(navController) }
+                composable("mainScreen") { MainScreen(navController) }
 //                composable("profile") {
 //                    ProfileScreen()
 //                }
