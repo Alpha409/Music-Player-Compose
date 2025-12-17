@@ -81,16 +81,16 @@ fun SplashScreen(navController: NavController) {
 
 @Composable
 fun AnimatedPreLoader(modifier: Modifier = Modifier) {
-    val preloaderLottieComposition by rememberLottieComposition(
+    val preLoaderLottieComposition by rememberLottieComposition(
         LottieCompositionSpec.RawRes(
             R.raw.loading
         )
     )
     val preloaderProgress by animateLottieCompositionAsState(
-        preloaderLottieComposition, iterations = LottieConstants.IterateForever, isPlaying = true
+        preLoaderLottieComposition, iterations = LottieConstants.IterateForever, isPlaying = true
     )
     LottieAnimation(
-        composition = preloaderLottieComposition,
+        composition = preLoaderLottieComposition,
         progress = preloaderProgress,
         modifier = modifier,
         alignment = Alignment.Center
