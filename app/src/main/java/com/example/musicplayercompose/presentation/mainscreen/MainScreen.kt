@@ -30,17 +30,14 @@ fun MainScreen(navController: NavController) {
 }
 @Composable
 fun BottomBar(navController: NavController) {
-
     val items = listOf(
         BottomNavItem.Home,
         BottomNavItem.MyMusic,
         BottomNavItem.Favorite
     )
-
     NavigationBar {
         val currentRoute = navController
             .currentBackStackEntryAsState().value?.destination?.route
-
         items.forEach { item ->
             NavigationBarItem(
                 selected = currentRoute == item.route,

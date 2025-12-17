@@ -35,7 +35,6 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(navController: NavController) {
-
     LaunchedEffect(Unit) {
         delay(10_000) // 10 seconds
         navController.navigate("home") {
@@ -87,20 +86,15 @@ fun AnimatedPreloader(modifier: Modifier = Modifier) {
             R.raw.loading
         )
     )
-
     val preloaderProgress by animateLottieCompositionAsState(
         preloaderLottieComposition, iterations = LottieConstants.IterateForever, isPlaying = true
     )
-
-
     LottieAnimation(
         composition = preloaderLottieComposition,
         progress = preloaderProgress,
         modifier = modifier,
         alignment = Alignment.Center
     )
-
-
 }
 
 @Preview

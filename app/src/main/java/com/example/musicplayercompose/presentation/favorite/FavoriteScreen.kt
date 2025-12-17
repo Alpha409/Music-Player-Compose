@@ -6,7 +6,6 @@ import androidx.navigation.NavController
 
 @Composable
 fun FavoriteScreen(navController: NavController) {
-
     Text(
         text = "Favorite Screen" )
 }
