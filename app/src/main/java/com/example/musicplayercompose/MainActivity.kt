@@ -13,6 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.musicplayercompose.presentation.favorite.FavoriteScreen
 import com.example.musicplayercompose.presentation.home.HomeScreen
+import com.example.musicplayercompose.presentation.mainscreen.MainScreen
 import com.example.musicplayercompose.presentation.mymusic.MusicScreen
 import com.example.musicplayercompose.presentation.splash.SplashScreen
 import com.example.musicplayercompose.ui.theme.MusicPlayerComposeTheme
