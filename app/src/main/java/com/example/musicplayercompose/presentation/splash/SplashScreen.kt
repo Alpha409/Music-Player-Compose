@@ -63,7 +63,7 @@ fun SplashScreen(navController: NavController) {
                 .padding(top = 22.sdp),
             tint = Color.Unspecified
         )
-        AnimatedPreloader(
+        AnimatedPreLoader(
             modifier = Modifier
                 .height(100.dp)
                 .fillMaxWidth()
@@ -80,7 +80,7 @@ fun SplashScreen(navController: NavController) {
 }
 
 @Composable
-fun AnimatedPreloader(modifier: Modifier = Modifier) {
+fun AnimatedPreLoader(modifier: Modifier = Modifier) {
     val preloaderLottieComposition by rememberLottieComposition(
         LottieCompositionSpec.RawRes(
             R.raw.loading
