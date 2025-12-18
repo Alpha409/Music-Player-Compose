@@ -27,9 +27,7 @@ val bottomBarRoutes = listOf(
 )
 
 @Composable
-fun MainScreen() {
-    val navController = rememberNavController()
-
+fun MainScreen(navController: NavController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
