@@ -8,6 +8,5 @@ import androidx.navigation.NavController
 
 @Composable
 fun MusicScreen(navController: NavController) {
-    Text(
-        text = "Music Screen" )
+    Text(text = "Music Screen" )
 }
