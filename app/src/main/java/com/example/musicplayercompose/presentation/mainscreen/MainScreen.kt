@@ -21,7 +21,7 @@ import com.example.musicplayercompose.common.bottomnav.BottomNavItem
 
 
 val bottomBarRoutes = listOf(
-    BottomNavItem.Home.route, BottomNavItem.MyMusic.route, BottomNavItem.Favorite.route
+     BottomNavItem.MyMusic.route, BottomNavItem.Home.route,BottomNavItem.Favorite.route
 )
 
 @Composable
