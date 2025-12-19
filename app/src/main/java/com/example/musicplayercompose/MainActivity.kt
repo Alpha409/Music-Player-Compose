@@ -8,9 +8,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.musicplayercompose.common.bottomnav.BottomNavItem
 import com.example.musicplayercompose.presentation.favorite.FavoriteScreen
 import com.example.musicplayercompose.presentation.home.HomeScreen
 import com.example.musicplayercompose.presentation.mainscreen.MainScreen
@@ -24,38 +26,27 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-
-            NavHost(
-                navController = navController, startDestination = "splash"
-            ) {
-                composable("splash") {
-                    SplashScreen(navController)
-                }
-                composable("home") {
-                    HomeScreen(navController)
-                }
-                composable("myMusic") { MusicScreen(navController) }
-                composable("fav") { FavoriteScreen(navController) }
-                composable("mainScreen") { MainScreen(navController) }
-//                composable("profile") {
-//                    ProfileScreen()
-//                }
-            }
+            NavGraph(navController)
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!", modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MusicPlayerComposeTheme {
-        Greeting("Android")
+fun NavGraph(navController: NavHostController) {
+    NavHost(
+        navController = navController,
+        startDestination =  "splash"
+    ) {
+        composable("splash") {
+            SplashScreen(navController)
+        }
+        composable("home") {
+            HomeScreen(navController)
+        }
+        composable("myMusic") { MusicScreen(navController) }
+        composable("fav") { FavoriteScreen(navController) }
+        composable("mainScreen") { MainScreen(navController) }
     }
 }
+
+
