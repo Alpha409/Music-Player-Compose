@@ -17,7 +17,7 @@ import com.example.musicplayercompose.R
 
 @Composable
 fun MusicScreen(navController: NavController) {
-    Column(modifier = Modifier.fillMaxSize()){
+    Column(modifier = Modifier.fillMaxSize()) {
         MusicItem(navController)
     }
 }
@@ -25,14 +25,12 @@ fun MusicScreen(navController: NavController) {
 @Composable
 fun MusicItem(navController: NavController) {
     Row() {
-        Icon(painter = painterResource(R.drawable.allsongsplaceholder),contentDescription = null)
+        Icon(painter = painterResource(R.drawable.allsongsplaceholder), contentDescription = null)
     }
 }
 
-
 @Preview
 @Composable
-fun previewMusicScreen(){
+fun previewMusicScreen() {
     MusicScreen(navController = NavController(LocalContext.current))
-
 }
