@@ -22,17 +22,11 @@ fun MusicScreen(navController: NavController) {
     }
 }
 
-
-
 @Composable
 fun MusicItem(navController: NavController) {
-
     Row() {
         Icon(painter = painterResource(R.drawable.allsongsplaceholder),contentDescription = null)
-
     }
-
-
 }
 
 
