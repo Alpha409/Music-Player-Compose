@@ -2,6 +2,7 @@ package com.example.musicplayercompose.presentation.mymusic
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -84,7 +85,7 @@ fun MusicItem(navController: NavController, modifier: Modifier) {
                 painter = painterResource(id = R.drawable.heart_empty),
                 contentDescription = stringResource(R.string.music),
                 tint = Color.Unspecified,
-                modifier = Modifier.size(24.dp).padding(end = 5.sdp)
+                modifier = Modifier.size(24.dp).padding(end = 5.sdp).clickable(true, onClick = )
             )
         }
     }
