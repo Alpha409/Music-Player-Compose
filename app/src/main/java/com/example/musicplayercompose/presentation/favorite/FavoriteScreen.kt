@@ -12,7 +12,7 @@ import com.example.musicplayercompose.presentation.mymusic.MusicItem
 @Composable
 fun FavoriteScreen(navController: NavController) {
     Column(modifier = Modifier.fillMaxSize()) {
-        MusicItem(navController)
+        MusicItem(navController, modifier = Modifier)
     }
 }
 
