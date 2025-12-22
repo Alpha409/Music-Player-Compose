@@ -28,7 +28,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-
 import androidx.navigation.NavController
 import com.example.musicplayercompose.R
 import ir.kaaveh.sdpcompose.sdp
@@ -85,8 +84,8 @@ fun MusicItem(navController: NavController, modifier: Modifier) {
                 painter = painterResource(id = R.drawable.heart_empty),
                 contentDescription = stringResource(R.string.music),
                 tint = Color.Unspecified,
-                modifier = Modifier.size(24.dp).padding(end = 5.sdp).clickable(true, onClick = )
-            )
+                modifier = Modifier.size(24.dp).padding(end = 5.sdp)/*.clickable(true*//*, onClick =*/ )
+
         }
     }
 }
