@@ -34,6 +34,7 @@ import ir.kaaveh.sdpcompose.sdp
 
 @Composable
 fun MusicScreen(navController: NavController) {
+
     Column(modifier = Modifier.fillMaxSize()) {
         MusicItem(navController, modifier = Modifier)
     }
@@ -50,8 +51,6 @@ fun MusicItem(navController: NavController, modifier: Modifier) {
             modifier = Modifier.background(Color.Black).padding(5.sdp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-
-            // Song Image Card
             Card(
                 modifier = Modifier.size(50.sdp),
                 shape = RoundedCornerShape(10.sdp),
@@ -64,10 +63,7 @@ fun MusicItem(navController: NavController, modifier: Modifier) {
                     modifier = Modifier.fillMaxSize()
                 )
             }
-
             Spacer(modifier = Modifier.width(8.sdp))
-
-            // Song & Artist Names
             Column(
                 modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center
             ) {
@@ -84,7 +80,6 @@ fun MusicItem(navController: NavController, modifier: Modifier) {
                 )
             }
 
-            // Favorite Icon
             Icon(
                 painter = painterResource(id = R.drawable.heart_empty),
                 contentDescription = stringResource(R.string.music),
