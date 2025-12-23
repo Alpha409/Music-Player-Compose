@@ -34,12 +34,12 @@ import ir.kaaveh.sdpcompose.sdp
 @Composable
 fun MusicScreen(navController: NavController) {
     Column(modifier = Modifier.fillMaxSize()) {
-        MusicItem(navController, modifier = Modifier)
+        MusicItem(modifier = Modifier)
     }
 }
 
 @Composable
-fun MusicItem(navController: NavController, modifier: Modifier) {
+fun MusicItem(modifier: Modifier) {
     Card(
         modifier = modifier
             .fillMaxWidth()
