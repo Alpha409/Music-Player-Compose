@@ -33,7 +33,6 @@ import ir.kaaveh.sdpcompose.sdp
 
 @Composable
 fun MusicScreen(navController: NavController) {
-
     Column(modifier = Modifier.fillMaxSize()) {
         MusicItem(navController, modifier = Modifier)
     }
@@ -42,12 +41,16 @@ fun MusicScreen(navController: NavController) {
 @Composable
 fun MusicItem(navController: NavController, modifier: Modifier) {
     Card(
-        modifier = modifier.fillMaxWidth().padding(horizontal = 4.sdp),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 4.sdp),
         shape = RoundedCornerShape(0.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Row(
-            modifier = Modifier.background(Color.Black).padding(5.sdp),
+            modifier = Modifier
+                .background(Color.Black)
+                .padding(5.sdp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Card(
@@ -78,12 +81,14 @@ fun MusicItem(navController: NavController, modifier: Modifier) {
                     color = Color.Gray
                 )
             }
-
             Icon(
                 painter = painterResource(id = R.drawable.heart_empty),
                 contentDescription = stringResource(R.string.music),
                 tint = Color.Unspecified,
-                modifier = Modifier.size(24.dp).padding(end = 5.sdp)/*.clickable(true*//*, onClick =*/ )
+                modifier = Modifier
+                    .size(24.dp)
+                    .padding(end = 5.sdp)/*.clickable(true*//*, onClick =*/
+            )
 
         }
     }
