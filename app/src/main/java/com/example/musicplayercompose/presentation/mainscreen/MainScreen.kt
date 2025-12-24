@@ -16,9 +16,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.musicplayercompose.NavGraph
 import com.example.musicplayercompose.common.bottomnav.BottomNavItem
 
-
 val bottomBarRoutes = listOf(
-     BottomNavItem.MyMusic.route, BottomNavItem.Home.route,BottomNavItem.Favorite.route
+    BottomNavItem.MyMusic.route, BottomNavItem.Home.route, BottomNavItem.Favorite.route
 )
 
 @Composable
@@ -40,35 +39,25 @@ fun MainScreen(navController: NavHostController) {
 @Composable
 fun BottomBar(navController: NavHostController) {
     val items = listOf(
-        BottomNavItem.Home,
-        BottomNavItem.MyMusic,
-        BottomNavItem.Favorite
+        BottomNavItem.Home, BottomNavItem.MyMusic, BottomNavItem.Favorite
     )
-
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
-
     NavigationBar {
         items.forEach { item ->
-            NavigationBarItem(
-                selected = currentRoute == item.route,
-                onClick = {
-                    navController.navigate(item.route) {
-                        popUpTo(navController.graph.startDestinationId) {
-                            saveState = true
-                        }
-                        launchSingleTop = true
-                        restoreState = true
+            NavigationBarItem(selected = currentRoute == item.route, onClick = {
+                navController.navigate(item.route) {
+                    popUpTo(navController.graph.startDestinationId) {
+                        saveState = true
                     }
-                },
-                icon = {
-                    Icon(
-                        painter = painterResource(item.icon),
-                        contentDescription = item.label
-                    )
-                },
-                label = { Text(item.label) }
-            )
+                    launchSingleTop = true
+                    restoreState = true
+                }
+            }, icon = {
+                Icon(
+                    painter = painterResource(item.icon), contentDescription = item.label
+                )
+            }, label = { Text(item.label) })
         }
     }
 }
