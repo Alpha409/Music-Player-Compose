@@ -42,7 +42,7 @@ fun NavGraph(navController: NavHostController) {
             SplashScreen(navController)
         }
         composable("home") {
-            HomeScreen(navController)
+            HomeScreen()
         }
         composable("myMusic") { MusicScreen() }
         composable("fav") { FavoriteScreen() }
