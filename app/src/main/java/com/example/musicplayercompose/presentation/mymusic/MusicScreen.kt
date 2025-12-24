@@ -92,7 +92,6 @@ fun MusicItem(modifier: Modifier) {
     }
 }
 
-
 @Preview
 @Composable
 fun previewMusicScreen() {
