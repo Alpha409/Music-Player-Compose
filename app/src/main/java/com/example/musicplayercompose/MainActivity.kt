@@ -45,7 +45,7 @@ fun NavGraph(navController: NavHostController) {
             HomeScreen(navController)
         }
         composable("myMusic") { MusicScreen() }
-        composable("fav") { FavoriteScreen(navController) }
+        composable("fav") { FavoriteScreen() }
     }
 }
 
