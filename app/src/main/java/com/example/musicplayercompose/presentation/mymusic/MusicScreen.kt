@@ -85,9 +85,8 @@ fun MusicItem(modifier: Modifier) {
                 tint = Color.Unspecified,
                 modifier = Modifier
                     .size(24.dp)
-                    .padding(end = 5.sdp)/*.clickable(true*//*, onClick =*/
+                    .padding(end = 5.sdp)
             )
-
         }
     }
 }
