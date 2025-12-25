@@ -26,6 +26,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 @Composable
 fun AppRoot() {
     val navController = rememberNavController()
@@ -35,8 +36,7 @@ fun AppRoot() {
 @Composable
 fun NavGraph(navController: NavHostController) {
     NavHost(
-        navController = navController,
-        startDestination =  "splash"
+        navController = navController, startDestination = "splash"
     ) {
         composable("splash") {
             SplashScreen(navController)
@@ -44,9 +44,11 @@ fun NavGraph(navController: NavHostController) {
         composable("home") {
             HomeScreen()
         }
-        composable("myMusic") { MusicScreen() }
-        composable("fav") { FavoriteScreen() }
+        composable("myMusic") {
+            MusicScreen()
+        }
+        composable("fav") {
+            FavoriteScreen()
+        }
     }
 }
-
-
