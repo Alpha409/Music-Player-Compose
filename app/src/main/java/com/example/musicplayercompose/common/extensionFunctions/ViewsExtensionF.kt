@@ -1,4 +1,4 @@
-package com.example.musicplayer.common.extensionFunctions
+package com.example.musicplayercompose.common.extensionFunctions
 
 import android.content.Context
 import android.os.SystemClock
