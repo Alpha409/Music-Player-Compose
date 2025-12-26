@@ -2,7 +2,6 @@ package com.example.musicplayercompose.common
 
 import android.app.Application
 
-
 /*@HiltAndroidApp*/
 class MyApplication : Application() {
     override fun onCreate() {
