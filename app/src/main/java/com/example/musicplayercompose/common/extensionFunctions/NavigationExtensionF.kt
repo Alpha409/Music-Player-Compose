@@ -7,8 +7,7 @@ import androidx.navigation.NavOptionsBuilder
  * Prevents multiple rapid clicks from crashing navigation
  */
 fun NavHostController.navigateSafely(
-    route: String,
-    builder: NavOptionsBuilder.() -> Unit = {}
+    route: String, builder: NavOptionsBuilder.() -> Unit = {}
 ) {
     val currentRoute = currentBackStackEntry?.destination?.route
     if (currentRoute != route) {
@@ -41,8 +40,7 @@ fun NavHostController.safePopBackStack() {
  * Pop back to a specific route
  */
 fun NavHostController.popBackTo(
-    route: String,
-    inclusive: Boolean = false
+    route: String, inclusive: Boolean = false
 ) {
     popBackStack(route, inclusive)
 }
@@ -67,9 +65,7 @@ fun NavHostController.navigateIfNotAt(route: String) {
  * Navigate with full animation control (Compose-style)
  */
 fun NavHostController.navigateWithAnim(
-    route: String,
-    popUpToRoute: String? = null,
-    inclusive: Boolean = false
+    route: String, popUpToRoute: String? = null, inclusive: Boolean = false
 ) {
     navigate(route) {
         launchSingleTop = true
