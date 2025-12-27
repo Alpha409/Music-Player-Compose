@@ -85,7 +85,6 @@ class LocalDataSource /*@Inject constructor*/(
                 }
             }
         }
-        Log.i("Mp3Loader", "Loaded ${mp3List.size} recent mp3 files")
         emit(mp3List)
     }
 }
