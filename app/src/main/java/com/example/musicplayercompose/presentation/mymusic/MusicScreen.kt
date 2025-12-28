@@ -92,6 +92,6 @@ fun MusicItem(modifier: Modifier) {
 
 @Preview
 @Composable
-fun previewMusicScreen() {
+fun PreviewMusicScreen() {
     MusicScreen()
 }
