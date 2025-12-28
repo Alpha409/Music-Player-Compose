@@ -64,7 +64,8 @@ fun MusicItem(modifier: Modifier) {
                 )
             }
             Spacer(modifier = Modifier.width(8.sdp))
-            Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center) {
+            Column(modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.Center) {
                 Text(
                     text = stringResource(R.string.songnameher),
                     style = MaterialTheme.typography.bodyLarge,
