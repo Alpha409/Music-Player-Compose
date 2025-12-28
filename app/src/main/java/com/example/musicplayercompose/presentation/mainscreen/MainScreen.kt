@@ -47,7 +47,8 @@ fun BottomBar(navController: NavHostController) {
     val currentRoute = navBackStackEntry?.destination?.route
     NavigationBar {
         items.forEach { item ->
-            NavigationBarItem(selected = currentRoute == item.route, onClick = {
+            NavigationBarItem(selected = currentRoute == item.route,
+                onClick = {
                 navController.navigate(item.route) {
                     popUpTo(navController.graph.startDestinationId) {
                         saveState = true
@@ -57,7 +58,8 @@ fun BottomBar(navController: NavHostController) {
                 }
             }, icon = {
                 Icon(
-                    painter = painterResource(item.icon), contentDescription = item.label
+                    painter = painterResource(item.icon),
+                    contentDescription = item.label
                 )
             }, label = { Text(item.label) })
         }
