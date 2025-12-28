@@ -87,7 +87,9 @@ fun AnimatedPreLoader(modifier: Modifier = Modifier) {
         )
     )
     val preLoaderProgress by animateLottieCompositionAsState(
-        preLoaderLottieComposition, iterations = LottieConstants.IterateForever, isPlaying = true
+        preLoaderLottieComposition,
+        iterations = LottieConstants.IterateForever,
+        isPlaying = true
     )
     LottieAnimation(
         composition = preLoaderLottieComposition,
