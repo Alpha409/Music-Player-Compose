@@ -16,6 +16,6 @@ fun FavoriteScreen() {
 
 @Preview
 @Composable
-fun previewMusicScreen() {
+fun PreviewMusicScreen() {
     FavoriteScreen()
 }
