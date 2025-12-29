@@ -1,6 +1,5 @@
 package com.example.musicplayercompose.presentation.splash
 
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -31,7 +30,6 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.musicplayercompose.R
 import ir.kaaveh.sdpcompose.sdp
 import kotlinx.coroutines.delay
-
 
 @Composable
 fun SplashScreen(navController: NavController) {
@@ -87,9 +85,7 @@ fun AnimatedPreLoader(modifier: Modifier = Modifier) {
         )
     )
     val preLoaderProgress by animateLottieCompositionAsState(
-        preLoaderLottieComposition,
-        iterations = LottieConstants.IterateForever,
-        isPlaying = true
+        preLoaderLottieComposition, iterations = LottieConstants.IterateForever, isPlaying = true
     )
     LottieAnimation(
         composition = preLoaderLottieComposition,
