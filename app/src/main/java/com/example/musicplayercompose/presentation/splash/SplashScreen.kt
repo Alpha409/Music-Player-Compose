@@ -1,7 +1,6 @@
 package com.example.musicplayercompose.presentation.splash
 
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,7 +31,6 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.musicplayercompose.R
 import ir.kaaveh.sdpcompose.sdp
 import kotlinx.coroutines.delay
-
 
 
 @Composable
