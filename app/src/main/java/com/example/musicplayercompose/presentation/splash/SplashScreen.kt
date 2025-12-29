@@ -1,6 +1,7 @@
 package com.example.musicplayercompose.presentation.splash
 
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -33,6 +34,7 @@ import ir.kaaveh.sdpcompose.sdp
 import kotlinx.coroutines.delay
 
 
+
 @Composable
 fun SplashScreen(navController: NavController) {
     LaunchedEffect(Unit) {
@@ -44,7 +46,7 @@ fun SplashScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(R.color.black)),
+            .background(Color.Black),
         verticalArrangement = Arrangement.Top
     ) {
         Icon(
