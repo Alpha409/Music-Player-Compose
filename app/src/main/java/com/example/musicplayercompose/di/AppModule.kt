@@ -1,6 +1,4 @@
-package com.example.musicplayercompose.di
-
-/*
+package com.example.musicplayercompose.di/*
 import android.content.Context
 //import com.example.musicplayercompose.data.datasource.FavSongsDataSource
 import com.example.musicplayercompose.data.datasource.LocalDataSource
@@ -38,8 +36,7 @@ class AppModule {
     fun providesGetMusicRepo(dataSource: LocalDataSource): GetMusicLocalRepo {
         return GetMusicLocalRepoImpl(dataSource)
     }
-  */
-/*  @Provides
+  *//*  @Provides
     @Singleton
     fun providesFavRepo(favSource: FavSongsDataSource): FavSongsRepo {
         return FavSongsRepoImpl(favSource)
