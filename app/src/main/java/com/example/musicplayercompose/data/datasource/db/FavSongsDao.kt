@@ -1,6 +1,4 @@
-package com.example.musicplayercompose.data.datasource.db
-
-/*
+package com.example.musicplayercompose.data.datasource.db/*
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -8,7 +6,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 import kotlinx.coroutines.flow.Flow
-
 
 @Dao
 interface FavSongsDao {
@@ -21,6 +18,5 @@ interface FavSongsDao {
 
     @Delete
     suspend fun removeFav(favSong: Mp3FilesDataClass)
-
 
 }*/
