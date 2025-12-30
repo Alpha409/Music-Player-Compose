@@ -1,6 +1,4 @@
-package com.example.musicplayercompose.data.datasource.db
-
-/*
+package com.example.musicplayercompose.data.datasource.db/*
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
