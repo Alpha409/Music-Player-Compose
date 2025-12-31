@@ -18,5 +18,4 @@ interface FavSongsDao {
 
     @Delete
     suspend fun removeFav(favSong: Mp3FilesDataClass)
-
 }*/
