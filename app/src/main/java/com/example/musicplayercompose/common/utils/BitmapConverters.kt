@@ -1,6 +1,4 @@
-package com.example.musicplayercompose.common.utils
-
-/*
+package com.example.musicplayercompose.common.utils/*
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.room.TypeConverter
