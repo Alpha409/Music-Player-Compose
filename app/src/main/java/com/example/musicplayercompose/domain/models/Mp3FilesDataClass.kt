@@ -1,9 +1,7 @@
 package com.example.musicplayercompose.domain.models
 
-
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-
 
 @Entity(tableName = "fav_songs")
 data class Mp3FilesDataClass(
