@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 //    alias (libs.plugins.ksp)
 //    alias(libs.plugins.hilt)
-//    id("org.jetbrains.kotlin.kapt")   // <-- add this
+    id("org.jetbrains.kotlin.kapt")   // <-- add this
 }
 
 android {
@@ -60,8 +60,8 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.media3.exoplayer)
-//    implementation(libs.androidx.room.ktx)
-//    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
