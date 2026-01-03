@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.provider.MediaStore
-import android.util.Log
 import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
