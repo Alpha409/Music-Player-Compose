@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 
 /*@HiltViewModel*/
-class MainViewModel /*@Inject constructor*/(
+class MainViewModel @Inject constructor(
     var localRepo: GetMusicLocalRepo, var favRepo: FavSongsRepo
 ) : ViewModel() {
     private val _favList = MutableStateFlow<List<Mp3FilesDataClass>>(emptyList())
