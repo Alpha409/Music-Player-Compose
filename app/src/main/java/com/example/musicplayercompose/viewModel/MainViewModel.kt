@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
-/*@HiltViewModel*/
+@HiltViewModel
 class MainViewModel @Inject constructor(
     var localRepo: GetMusicLocalRepo, var favRepo: FavSongsRepo
 ) : ViewModel() {
