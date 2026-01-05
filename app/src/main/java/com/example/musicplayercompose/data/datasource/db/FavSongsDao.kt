@@ -10,7 +10,6 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavSongsDao {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFav(favSong: Mp3FilesDataClass)
 
