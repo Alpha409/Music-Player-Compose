@@ -16,7 +16,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    var localRepo: GetMusicLocalRepo, var favRepo: FavSongsRepo
+    var localRepo: GetMusicLocalRepo,
+    var favRepo: FavSongsRepo
 ) : ViewModel() {
     private val _favList = MutableStateFlow<List<Mp3FilesDataClass>>(emptyList())
     val favList: StateFlow<List<Mp3FilesDataClass>> = _favList
