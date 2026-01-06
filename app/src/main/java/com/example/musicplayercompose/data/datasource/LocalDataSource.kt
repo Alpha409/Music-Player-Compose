@@ -28,7 +28,6 @@ class LocalDataSource @Inject constructor(
             MediaStore.Audio.Media.ALBUM_ID,
             MediaStore.Audio.Media.DATE_ADDED // 👈 added this
         )
-        // 👇 Sort by date added (newest first)
         val sortOrder = "${MediaStore.Audio.Media.DATE_ADDED} DESC"
         withContext(Dispatchers.IO) {
             resolver.query(
