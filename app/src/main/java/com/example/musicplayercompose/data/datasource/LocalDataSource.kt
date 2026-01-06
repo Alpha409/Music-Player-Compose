@@ -45,7 +45,7 @@ class LocalDataSource @Inject constructor(
                     cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATE_ADDED)
                 val albumArtProjection = arrayOf(MediaStore.Audio.Albums.ALBUM_ART)
                 var count = 0
-                while (cursor.moveToNext() && count < 20) { // 👈 Limit to latest 20 songs
+                while (cursor.moveToNext() && count < 20) {
                     val id = cursor.getLong(idColumn)
                     val title = cursor.getString(titleColumn)
                     val artist = cursor.getString(artistColumn)
