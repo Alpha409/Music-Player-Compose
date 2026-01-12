@@ -10,6 +10,10 @@ sealed class BottomNavItem(
     object MyMusic : BottomNavItem("myMusic",
         R.drawable.music,
         "MyMusic")
-    object Home : BottomNavItem("home", R.drawable.home, "Home")
-    object Favorite : BottomNavItem("fav", R.drawable.fav, "Favorite")
+    object Home : BottomNavItem("home",
+        R.drawable.home,
+        "Home")
+    object Favorite : BottomNavItem("fav",
+        R.drawable.fav,
+        "Favorite")
 }
