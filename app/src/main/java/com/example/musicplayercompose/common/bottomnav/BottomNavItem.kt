@@ -7,7 +7,8 @@ sealed class BottomNavItem(
     val icon: Int,
     val label: String
 ) {
-    object MyMusic : BottomNavItem("myMusic", R.drawable.music, "MyMusic")
+    object MyMusic : BottomNavItem("myMusic",
+        R.drawable.music, "MyMusic")
     object Home : BottomNavItem("home", R.drawable.home, "Home")
     object Favorite : BottomNavItem("fav", R.drawable.fav, "Favorite")
 }
