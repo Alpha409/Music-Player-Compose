@@ -24,7 +24,7 @@ class LocalDataSource @Inject constructor(private val context: Context) {
             MediaStore.Audio.Media.DURATION,
             MediaStore.Audio.Media.DATA,
             MediaStore.Audio.Media.ALBUM_ID,
-            MediaStore.Audio.Media.DATE_ADDED // 👈 added this
+            MediaStore.Audio.Media.DATE_ADDED
         )
         val sortOrder = "${MediaStore.Audio.Media.DATE_ADDED} DESC"
         withContext(Dispatchers.IO) {
