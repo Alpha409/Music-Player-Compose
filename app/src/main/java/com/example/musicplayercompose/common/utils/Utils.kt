@@ -9,6 +9,7 @@ import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 object Utils {
     private var exoPlayer: ExoPlayer? = null
     var currentSong: Mp3FilesDataClass? = null
+
     /**
      * Initialize ExoPlayer if not already created.
      * Should be called once — usually in Application or first Activity.
@@ -19,10 +20,12 @@ object Utils {
         }
         return exoPlayer!!
     }
+
     /**
      * Get the existing ExoPlayer instance safely.
      */
     fun getPlayer(): ExoPlayer? = exoPlayer
+
     /**
      * Prepare and play a given media source.
      */
@@ -33,12 +36,14 @@ object Utils {
         player.prepare()
         player.play()
     }
+
     /**
      * Pause playback if player is active.
      */
     fun pausePlayer() {
         exoPlayer?.pause()
     }
+
     /**
      * Stop and release the player completely.
      * Call this when the app is closing or music service stops.
