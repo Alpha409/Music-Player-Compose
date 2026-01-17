@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.SystemClock
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.core.view.isVisible
 
 object ViewsExtensionF {
 
@@ -30,7 +31,7 @@ object ViewsExtensionF {
     }
 
     fun View.toggleVisibility() {
-        visibility = if (visibility == View.VISIBLE) View.GONE else View.VISIBLE
+        visibility = if (isVisible) View.GONE else View.VISIBLE
     }
 
     fun View.setOnOneClickListener(interval: Long = 600L, onSafeClick: (View) -> Unit) {
