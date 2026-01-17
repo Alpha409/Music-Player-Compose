@@ -69,7 +69,6 @@ fun NavHostController.navigateWithAnim(
 ) {
     navigate(route) {
         launchSingleTop = true
-
         popUpToRoute?.let {
             popUpTo(it) {
                 this.inclusive = inclusive
