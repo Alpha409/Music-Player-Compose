@@ -2,9 +2,7 @@ package com.example.musicplayercompose.common.bottomnav
 
 import com.example.musicplayercompose.R
 
-sealed class BottomNavItem(
-    val route: String, val icon: Int, val label: String
-) {
+sealed class BottomNavItem(val route: String, val icon: Int, val label: String) {
     object MyMusic : BottomNavItem(
         "myMusic", R.drawable.music, "MyMusic"
     )
