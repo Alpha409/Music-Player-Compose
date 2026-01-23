@@ -69,6 +69,7 @@ class LocalDataSource @Inject constructor(
                             albumArt = BitmapFactory.decodeFile(albumArtPath)
                         }
                     }
+
                     mp3List.add(
                         Mp3FilesDataClass(
                             id = id,
