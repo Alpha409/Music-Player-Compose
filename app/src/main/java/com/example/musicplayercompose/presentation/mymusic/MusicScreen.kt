@@ -38,6 +38,7 @@ fun MusicScreen() {
 
 @Composable
 fun MusicItem(modifier: Modifier) {
+
     Card(
         modifier = modifier
             .fillMaxWidth()
@@ -63,7 +64,9 @@ fun MusicItem(modifier: Modifier) {
                     modifier = Modifier.fillMaxSize()
                 )
             }
+
             Spacer(modifier = Modifier.width(8.sdp))
+
             Column(
                 modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center
             ) {
