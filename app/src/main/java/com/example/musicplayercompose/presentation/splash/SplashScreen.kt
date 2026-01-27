@@ -64,6 +64,7 @@ fun SplashScreen(navController: NavController) {
                 .padding(top = 22.sdp),
             tint = Color.Unspecified
         )
+
         AnimatedPreLoader(
             modifier = Modifier
                 .height(100.dp)
