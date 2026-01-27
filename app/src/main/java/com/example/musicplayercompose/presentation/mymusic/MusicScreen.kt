@@ -82,6 +82,7 @@ fun MusicItem(modifier: Modifier) {
                     color = Color.Gray
                 )
             }
+
             Icon(
                 painter = painterResource(id = R.drawable.heart_empty),
                 contentDescription = stringResource(R.string.music),
