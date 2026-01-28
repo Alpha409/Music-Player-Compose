@@ -10,7 +10,9 @@ import com.example.musicplayercompose.presentation.mymusic.MusicItem
 @Composable
 fun FavoriteScreen() {
     Column(modifier = Modifier.fillMaxSize()) {
+
         MusicItem(modifier = Modifier)
+
     }
 }
 
