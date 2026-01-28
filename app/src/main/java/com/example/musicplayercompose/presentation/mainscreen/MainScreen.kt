@@ -30,6 +30,7 @@ fun MainScreen(navController: NavHostController) {
                 BottomBar(navController)
             }
         }) { padding ->
+
         Box(modifier = Modifier.padding(padding)) {
             NavGraph(navController)
         }
