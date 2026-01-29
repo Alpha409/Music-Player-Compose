@@ -38,7 +38,6 @@ fun MusicScreen() {
 
 @Composable
 fun MusicItem(modifier: Modifier) {
-
     Card(
         modifier = modifier
             .fillMaxWidth()
