@@ -63,9 +63,7 @@ fun MusicItem(modifier: Modifier) {
                     modifier = Modifier.fillMaxSize()
                 )
             }
-
             Spacer(modifier = Modifier.width(8.sdp))
-
             Column(
                 modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center
             ) {
@@ -81,7 +79,6 @@ fun MusicItem(modifier: Modifier) {
                     color = Color.Gray
                 )
             }
-
             Icon(
                 painter = painterResource(id = R.drawable.heart_empty),
                 contentDescription = stringResource(R.string.music),
