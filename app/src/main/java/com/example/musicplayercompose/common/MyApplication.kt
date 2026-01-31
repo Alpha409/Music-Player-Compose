@@ -9,7 +9,6 @@ class MyApplication : Application() {
         super.onCreate()
         instance = this
     }
-
     companion object {
         lateinit var instance: MyApplication
             private set
