@@ -8,6 +8,7 @@ import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 
 object Utils {
     private var exoPlayer: ExoPlayer? = null
+
     var currentSong: Mp3FilesDataClass? = null
 
     /**
