@@ -6,6 +6,7 @@ import androidx.room.TypeConverter
 import java.io.ByteArrayOutputStream
 
 class BitmapConverters {
+
     @TypeConverter
     fun fromBitmap(bitmap: Bitmap?): ByteArray? {
         if (bitmap == null) return null
