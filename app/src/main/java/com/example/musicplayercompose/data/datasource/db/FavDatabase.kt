@@ -10,5 +10,4 @@ import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 @TypeConverters(BitmapConverters::class)
 abstract class FavDatabase : RoomDatabase() {
     abstract fun favDao(): FavSongsDao
-
 }
