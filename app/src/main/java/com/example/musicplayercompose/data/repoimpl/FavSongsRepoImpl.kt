@@ -9,7 +9,6 @@ class FavSongsRepoImpl(val favSource: FavSongsDataSource) : FavSongsRepo {
     override suspend fun getAllFavSongs(): Flow<List<Mp3FilesDataClass>> {
         return favSource.getAllFavSongs()
     }
-
     override suspend fun insertFav(favSong: Mp3FilesDataClass) {
         favSource.insertFav(favSong)
     }
