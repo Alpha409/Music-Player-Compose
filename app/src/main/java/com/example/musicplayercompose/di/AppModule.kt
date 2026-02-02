@@ -34,7 +34,6 @@ class AppModule {
     fun providesGetMusicRepo(dataSource: LocalDataSource): GetMusicLocalRepo {
         return GetMusicLocalRepoImpl(dataSource)
     }
-
     @Provides
     @Singleton
     fun providesFavRepo(favSource: FavSongsDataSource): FavSongsRepo {
