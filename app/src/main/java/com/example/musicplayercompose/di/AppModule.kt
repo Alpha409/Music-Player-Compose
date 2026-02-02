@@ -22,6 +22,7 @@ class AppModule {
     fun provideApplicationContext(
         @ApplicationContext context: Context
     ): Context = context
+
     @Provides
     @Singleton
     fun provideLocalDataSource(
@@ -29,11 +30,13 @@ class AppModule {
     ): LocalDataSource {
         return LocalDataSource(context)
     }
+
     @Provides
     @Singleton
     fun providesGetMusicRepo(dataSource: LocalDataSource): GetMusicLocalRepo {
         return GetMusicLocalRepoImpl(dataSource)
     }
+
     @Provides
     @Singleton
     fun providesFavRepo(favSource: FavSongsDataSource): FavSongsRepo {
