@@ -22,7 +22,6 @@ class AppModule {
     fun provideApplicationContext(
         @ApplicationContext context: Context
     ): Context = context
-
     @Provides
     @Singleton
     fun provideLocalDataSource(
