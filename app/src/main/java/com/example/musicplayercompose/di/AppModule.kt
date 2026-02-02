@@ -29,7 +29,6 @@ class AppModule {
     ): LocalDataSource {
         return LocalDataSource(context)
     }
-
     @Provides
     @Singleton
     fun providesGetMusicRepo(dataSource: LocalDataSource): GetMusicLocalRepo {
