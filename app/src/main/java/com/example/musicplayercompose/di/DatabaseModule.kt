@@ -20,7 +20,8 @@ class DatabaseModule {
     fun provideFavDatabase(
         @ApplicationContext context: Context
     ): FavDatabase {
-        return Room.databaseBuilder(context.applicationContext, FavDatabase::class.java, "my_fav_db"
+        return Room.databaseBuilder(
+            context.applicationContext, FavDatabase::class.java, "my_fav_db"
         ).fallbackToDestructiveMigration().build()
     }
 
