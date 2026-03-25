@@ -24,7 +24,6 @@ class DatabaseModule {
             context.applicationContext, FavDatabase::class.java, "my_fav_db"
         ).fallbackToDestructiveMigration().build()
     }
-
     @Provides
     fun provideFavDao(favDb: FavDatabase): FavSongsDao = favDb.favDao()
 }
