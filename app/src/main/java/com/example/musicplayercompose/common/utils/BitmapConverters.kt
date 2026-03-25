@@ -21,5 +21,4 @@ class BitmapConverters {
             BitmapFactory.decodeByteArray(it, 0, it.size)
         }
     }
-
 }
