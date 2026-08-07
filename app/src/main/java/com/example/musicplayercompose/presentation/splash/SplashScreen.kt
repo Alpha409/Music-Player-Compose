@@ -39,14 +39,12 @@ fun SplashScreen(navController: NavController) {
             popUpTo("splash") { inclusive = true }
         }
     }
-
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black),
         verticalArrangement = Arrangement.Top
     ) {
-
         Icon(
             painter = painterResource(R.drawable.musicicon),
             contentDescription = null,
@@ -55,7 +53,6 @@ fun SplashScreen(navController: NavController) {
                 .padding(top = 22.sdp),
             tint = Color.Unspecified
         )
-
         Icon(
             painter = painterResource(R.drawable.echo),
             contentDescription = null,
@@ -64,7 +61,6 @@ fun SplashScreen(navController: NavController) {
                 .padding(top = 22.sdp),
             tint = Color.Unspecified
         )
-
         AnimatedPreLoader(
             modifier = Modifier
                 .height(100.dp)
@@ -88,11 +84,9 @@ fun AnimatedPreLoader(modifier: Modifier = Modifier) {
             R.raw.loading
         )
     )
-
     val preLoaderProgress by animateLottieCompositionAsState(
         preLoaderLottieComposition, iterations = LottieConstants.IterateForever, isPlaying = true
     )
-
     LottieAnimation(
         composition = preLoaderLottieComposition,
         progress = preLoaderProgress,
