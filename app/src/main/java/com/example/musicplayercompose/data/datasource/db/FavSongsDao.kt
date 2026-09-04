@@ -5,17 +5,19 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.musicplayercompose.domain.models.Mp3FilesDataClass
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavSongsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertFav(favSong: Mp3FilesDataClass)
+    suspend fun insertFav(favSong: FavSongEntity)
 
-    @Query("SELECT * FROM fav_songs")
-    fun getAllFavSongs(): Flow<List<Mp3FilesDataClass>>
+    @Query("SELECT * FROM fav_songs ORDER BY title ASC")
+    fun getAllFavSongs(): Flow<List<FavSongEntity>>
 
     @Delete
-    suspend fun removeFav(favSong: Mp3FilesDataClass)
+    suspend fun removeFav(favSong: FavSongEntity)
+
+    @Query("DELETE FROM fav_songs WHERE id = :id")
+    suspend fun removeFavById(id: Long)
 }

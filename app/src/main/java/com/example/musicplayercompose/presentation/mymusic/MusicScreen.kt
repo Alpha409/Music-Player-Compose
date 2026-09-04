@@ -1,98 +1,134 @@
 package com.example.musicplayercompose.presentation.mymusic
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Icon
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.musicplayercompose.R
-import ir.kaaveh.sdpcompose.sdp
+import androidx.compose.ui.unit.sp
+import com.example.musicplayercompose.presentation.components.SearchBarComponent
+import com.example.musicplayercompose.presentation.components.SongListItem
+import com.example.musicplayercompose.ui.theme.AccentPurple
+import com.example.musicplayercompose.ui.theme.DarkBackground
+import com.example.musicplayercompose.ui.theme.TextMuted
+import com.example.musicplayercompose.ui.theme.TextPrimary
+import com.example.musicplayercompose.ui.theme.TextSecondary
+import com.example.musicplayercompose.viewModel.MainViewModel
 
 @Composable
-fun MusicScreen() {
-    Column(modifier = Modifier.fillMaxSize()) {
-        MusicItem(modifier = Modifier)
-    }
-}
+fun MusicScreen(
+    viewModel: MainViewModel
+) {
+    val songs by viewModel.songs.collectAsState()
+    val searchQuery by viewModel.searchQuery.collectAsState()
+    val currentPlayingSong by viewModel.currentPlayingSong.collectAsState()
+    val isPlaying by viewModel.isPlaying.collectAsState()
 
-@Composable
-fun MusicItem(modifier: Modifier) {
-    Card(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(horizontal = 4.sdp),
-        shape = RoundedCornerShape(0.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(DarkBackground)
     ) {
+        // Top Header
         Row(
             modifier = Modifier
-                .background(Color.Black)
-                .padding(5.sdp),
+                .fillMaxWidth()
+                .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 4.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Card(
-                modifier = Modifier.size(50.sdp),
-                shape = RoundedCornerShape(10.sdp),
-                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.allsongsplaceholder),
-                    contentDescription = null,
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier.fillMaxSize()
-                )
-            }
-            Spacer(modifier = Modifier.width(8.sdp))
-            Column(
-                modifier = Modifier.weight(1f), verticalArrangement = Arrangement.Center
-            ) {
+            Column {
                 Text(
-                    text = stringResource(R.string.songnameher),
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = Color.White
+                    text = "My Music",
+                    style = MaterialTheme.typography.headlineMedium.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 26.sp
+                    ),
+                    color = TextPrimary
                 )
-
                 Text(
-                    text = stringResource(R.string.artistnameh),
+                    text = "${songs.size} tracks available",
                     style = MaterialTheme.typography.bodySmall,
-                    color = Color.Gray
+                    color = TextSecondary
                 )
             }
-            Icon(
-                painter = painterResource(id = R.drawable.heart_empty),
-                contentDescription = stringResource(R.string.music),
-                tint = Color.Unspecified,
+        }
+
+        // Search Bar
+        SearchBarComponent(
+            query = searchQuery,
+            onQueryChange = { viewModel.onSearchQueryChange(it) },
+            placeholderText = "Search in all songs..."
+        )
+
+        Spacer(modifier = Modifier.height(4.dp))
+
+        // Song List or Empty State
+        if (songs.isEmpty()) {
+            Box(
                 modifier = Modifier
-                    .size(24.dp)
-                    .padding(end = 5.sdp)
-            )
+                    .fillMaxSize()
+                    .padding(32.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = if (searchQuery.isNotEmpty()) "No results found for \"$searchQuery\"" else "No audio files found",
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = TextMuted
+                    )
+                    Spacer(modifier = Modifier.height(12.dp))
+                    if (searchQuery.isNotEmpty()) {
+                        Button(
+                            onClick = { viewModel.onSearchQueryChange("") },
+                            colors = ButtonDefaults.buttonColors(containerColor = AccentPurple)
+                        ) {
+                            Text("Clear Search")
+                        }
+                    } else {
+                        Button(
+                            onClick = { viewModel.loadMusic() },
+                            colors = ButtonDefaults.buttonColors(containerColor = AccentPurple)
+                        ) {
+                            Text("Rescan Device")
+                        }
+                    }
+                }
+            }
+        } else {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(bottom = 96.dp)
+            ) {
+                items(songs, key = { it.id }) { song ->
+                    SongListItem(
+                        song = song,
+                        isCurrentPlaying = currentPlayingSong?.id == song.id,
+                        isPlaying = isPlaying,
+                        onClick = { viewModel.playSong(song, songs) },
+                        onFavoriteToggle = { viewModel.toggleFavorite(song) }
+                    )
+                }
+            }
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewMusicScreen() {
-    MusicScreen()
 }
