@@ -36,7 +36,6 @@ class MainActivity : ComponentActivity() {
                 } else {
                     Manifest.permission.READ_EXTERNAL_STORAGE
                 }
-
                 val permissionLauncher = rememberLauncherForActivityResult(
                     contract = ActivityResultContracts.RequestPermission()
                 ) { isGranted ->
