@@ -44,6 +44,11 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+
+    kapt {
+        arguments { arg("room.schemaLocation", "$projectDir/schemas") }
     }
 }
 
@@ -54,6 +59,7 @@ hilt {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
@@ -62,6 +68,11 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.session)
+    implementation(libs.coil.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.room.ktx)
     kapt(libs.androidx.room.compiler)
 
@@ -75,7 +86,6 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.navigation.compose)
-    implementation("com.airbnb.android:lottie-compose:4.0.0")
     implementation (libs.sdp.compose)
 
 //    implementation(libs.javapoet)
